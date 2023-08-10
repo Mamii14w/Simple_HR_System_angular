@@ -1,0 +1,59 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "fname": "Daniel",
+      "lname": "Worku",
+      "sex": "male",
+      "DOB": "12/5/1999",
+      "Email": "dani@gmail.com",
+      "phone": 979363627,
+      "companyId": 1,
+      "departmentId": 1,
+      "salaryId": 1,
+      "expirience": 2,
+      "education": "degree",
+      "file": "dan.pdf"
+    },
+    {
+      "id": 2,
+      "fname": "Zelalem'",
+      "lname": "Jemer",
+      "sex": "male",
+      "DOB": "22/5/1998",
+      "Email": "dani@gmail.com",
+      "phone": 979363627,
+      "companyId": 1,
+      "departmentId": 3,
+      "salaryId": 2,
+      "expirience": 2,
+      "education": "degree",
+      "file": "dan.pdf"
+    },
+    {
+      "id": 3,
+      "fname": "yordanos",
+      "lname": "abera",
+      "sex": "female",
+      "DOB": "12/5/1999",
+      "Email": "dani@gmail.com",
+      "phone": 979363627,
+      "companyId": 2,
+      "departmentId": 2,
+      "salaryId": 1,
+      "expirience": 2,
+      "education": "degree",
+      "file": "dan.pdf"
+    }
+  ],
+  "company": [
+    {
+      "id": 1,
+      "cname": "XOKA"
+    },
+    {
+      "id": 2,
+      "cname": "CNET"
+    }
+  ]
+}

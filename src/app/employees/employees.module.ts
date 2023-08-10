@@ -2,24 +2,32 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { EmployeesRoutingModule } from './employees-routing.module';
-import { CreateEmpComponent } from './create-emp/create-emp.component';
+import { EmployeesComponent } from './employees.component';
+import { HeaderEmpComponent } from './header-emp/header-emp.component';
+import { CreateEmployeeComponent } from './create-employee/create-employee.component';
+import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
+import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
+import { GetbyIdComponent } from './getby-id/getby-id.component';
 import { ViewAllEmpComponent } from './view-all-emp/view-all-emp.component';
-import { DeleteEmpComponent } from './delete-emp/delete-emp.component';
-import { UpdateEmpComponent } from './update-emp/update-emp.component';
-import { GetByIdComponent } from './get-by-id/get-by-id.component';
-
+import { SearchByNameComponent } from './search-by-name/search-by-name.component';
+import { FormsModule } from '@angular/forms';
+//import { EmployeeMockService } from '../services/employee-mock.service';
 
 @NgModule({
   declarations: [
-    CreateEmpComponent,
+    EmployeesComponent,
+    CreateEmployeeComponent,
+    DeleteEmployeeComponent,
+    UpdateEmployeeComponent,
+    GetbyIdComponent,
     ViewAllEmpComponent,
-    DeleteEmpComponent,
-    UpdateEmpComponent,
-    GetByIdComponent
+    HeaderEmpComponent,
+    SearchByNameComponent,
   ],
   imports: [
     CommonModule,
-    EmployeesRoutingModule
+    FormsModule,
+    EmployeesRoutingModule,
   ]
 })
 export class EmployeesModule { }

@@ -1,4 +1,4 @@
-<div class="container-fluid g-0">
+<div>
   <app-header></app-header>
   <div class="row">  
     <div class="col-lg-2">
@@ -6,16 +6,8 @@
     </div>
     <div class="col-lg-9">
       <main>
-        <div class="toolbar">
-            <div class="Add-employees">
-              <button type="button" class="btn btn-success btn-lg"><i class="bi bi-plus-circle">Add Employee</i></button>
-            </div>
-            <div class="search-employees">
-              <input type="search" class="form-control" placeholder="Search Employee">
-            </div>
-        </div>
         <div class="employees">
-
+            <router-outlet></router-outlet>
         </div>
       </main>
     </div>
