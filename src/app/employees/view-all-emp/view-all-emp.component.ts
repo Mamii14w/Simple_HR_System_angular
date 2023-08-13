@@ -15,13 +15,32 @@ import { HttpClient } from '@angular/common/http';
     //this.GetAllEmp();
     employees: Employee[] = []
     ngOnInit(): void{
-      this.employeeService.getAllEmployees().subscribe((data : Employee[])=>{
-        // next:(d)=>console.log(d),
-        // error:(err)=> console.log(err)
-        console.log('data',data);
-        this.employees = data;
+      this.get_Employee();
+      // this.employeeService.getAllEmployees().subscribe((data : Employee[])=>{
+      //   // next:(d)=>console.log(d),
+      //   // error:(err)=> console.log(err)
+      //   console.log('data',data);
+      //   this.employees = data;
+      // });
+    }
+
+    get_Employee(){
+      this.employeeService.getEmployee().subscribe( (res: Employee[]) => {
+        console.log(res);
+        this.employees = res;
+        
+      })
+    }
+    // Edit(cid:number){
+    // alert(cid);
+    // }
+    delete(cid:number){
+       this.employeeService.deleteEmploye(cid).subscribe(res=>{
+       alert("you have deleted succesfully!");
+         this.get_Employee();
       });
     }
+
   /*  <--in-momery web api function -->C
   GetAllEmp(){
     this.employeeservice.getEmployees().subscribe({

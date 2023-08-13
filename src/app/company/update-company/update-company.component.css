@@ -1,0 +1,11 @@
+#cret{
+    padding-left: 200px;
+    color: rgb(150, 25, 143);
+    font-family: italic;
+    font-weight: bolder;
+}
+#lab{
+    font-family: italic;
+    color-interpolation-filters: auto;
+    font-weight: bold;
+}

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+//import { ToastrModule}  from 'ngx-toaster';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -8,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MockData } from 'src/assets/data/MockData';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDbService } from 'angular-in-memory-web-api';
 import {DataTablesModule} from 'angular-datatables';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -31,7 +33,7 @@ const routeArray = [
     CompanyModule,
     FormsModule,
     RouterModule.forRoot(routeArray),
-    HttpClientInMemoryWebApiModule.forRoot(MockData,{delay:500})
+    HttpClientInMemoryWebApiModule.forRoot(MockData,{delay:500,dataEncapsulation:false})
   ],
   providers: [CompanySevicesService],
   bootstrap: [AppComponent]

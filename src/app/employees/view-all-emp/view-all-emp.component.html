@@ -5,41 +5,42 @@
         <main>
           <div class="employees">
             <div >
-               <div class="card" style="width: 1200px;">
+               <div class="card" >
                 <div class="card-header">
                   <div class="toolbar">
                     <div class="Add-employees">
-                      <button type="button" class="btn btn-success ">Add New[+]</button>
+                      <a href="employees/create_emp"  class="btn btn-success "><i class="bi bi-circle-plus">Add New[+]</i></a>
                     </div>
                     <a class="navbar-brand mx-auto" href="#">Manage Employee</a>
                 </div>
                 </div>
                 <div class="card-body">
-                    <table datatable  class=" table table-bordered">
+                    <table datatable  class="table-hover minimized table table-striped table table-bordered">
                       <thead  id="header">
                         <tr>
                           <td>FName</td>
                           <td>Lname</td>
                           <td>Email</td>
-                          <td>Phone</td>
                           <td>sex</td>
-                          <td>DOB</td>
                           <td>company</td>
                           <td>Department</td>
-                          <td>Expirience</td>
-                          <td>Education</td>
                           <td>salary</td>
-                          <td>Document</td>
                           <td>Action</td>
                           <td>Role</td>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr >
-                          <td>hduuahs</td>
-                          <td>sadbjh</td>
-                          <td>kjadhfk</td>
-                          <td>hjsgd</td>
+                        <tr *ngFor="let emp of employees">
+                          <td>{{emp.fname}}</td>
+                          <td>{{emp.lname}}</td>
+                          <td>{{emp.Email}}</td>
+                          <td>{{emp.sex}}</td>
+                          <td>{{emp.companyId}}</td>
+                          <td>{{emp.role}}</td>
+                          <td>
+                            <a  href="employees/update_emp/{{emp.id}}" ><i  class="fa fa-edit" style="padding-right: 20px; color: green;"></i></a>                            
+                            <i class="fa fa-trash-o" style="color: red;" (click)="delete(emp.id)"></i>
+                           </td>
                         </tr>
                       </tbody>
 

@@ -7,7 +7,29 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 }) 
 export class EmployeeMockService {
-  constructor(private http: HttpClient){}
+
+  constructor(private http: HttpClient) { }
+
+  private basurl: string = 'http://localhost:4200/api/';
+  
+  getEmployee(): Observable<Employee[]> {
+    return this.http.get<Employee[]>(this.basurl + "employees");
+  }
+  getEmployeeById(id: number) {
+    return this.http.get(`${this.basurl}employees/${id}`);
+  }
+  AddEmployee(employeeOb: Employee) {
+    return this.http.post(`${this.basurl}employees`, employeeOb);
+  }
+  updateEmployee(employeeOb: Employee) {
+    return this.http.put(`${this.basurl}employees/${employeeOb.id}`, employeeOb);
+  }
+  deleteEmploye(id: number) {
+    return this.http.delete<any>(`${this.basurl}employees/${id}`);
+  }
+
+
+  /*constructor(private http: HttpClient){}
 
   createEmployee(employeesBody): Observable<Employee>{
     const empUrl = 'http://localhost:3000/company';
@@ -34,6 +56,6 @@ export class EmployeeMockService {
      const empUrl = 'http://localhost:3000/company/name='+empid;
       return this.http.get<Employee>(empUrl); //returns an observable
     }
-    
+    */
 
 }

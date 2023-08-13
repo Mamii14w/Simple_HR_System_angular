@@ -7,49 +7,22 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CompanySevicesService {
-  constructor(private http: HttpClient){} 
+  constructor(private http: HttpClient) { }
 
- 
-  /*
-      createCompany(companyBody): Observable<Company>{
-        const empUrl = 'http://localhost:3000/company';
-        //const empUrl = 'http://jsonplaceholder.com/';
-         return this.http.post<Company>(empUrl,companyBody); //returns an observable
-       }
-       getAllcompany():Observable<Company>{
-       const urls="http://localhost:3000/company"
-         return this.http.get<Company>(urls);
-       }
-       getbyidcompany(cid): Observable<Company>{
-          const empUrl = 'http://localhost:3000/company/'+cid;
-          return this.http.get<Company>(empUrl);
-        }
-        updatecompany(companyBody,cid): Observable<Company>{
-         const empUrl = 'http://localhost:3000/company'+cid;
-          return this.http.put<Company>(empUrl,companyBody); //returns an observable
-        }
-        Deletecompany(cid):Observable<Company>{
-         const empUrl = 'http://localhost:3000/company'+cid;
-          return this.http.delete<Company>(empUrl); //returns an observable 
-        }
-        SearchByNamecompany(cid): Observable<Company>{
-         const empUrl = 'http://localhost:3000/company/name='+cid;
-          return this.http.get<Company>(empUrl); //returns an observable
-        }*/
-        private basurl = "api/company";
-       getCompany(): Observable<Company[]>{
-         return this.http.get<Company[]>(this.basurl);
-       }
-       getCampanyById = (id: number) =>{
-         return this.http.get<Company>(`${this.basurl}/${id}`);
-       }
-       addCompany = (company:Company) =>{
-        return this.http.post<Company>(this.basurl,company);
-      }
-      updateCompany = (company:Company) =>{
-        return this.http.put<any>(`${this.basurl}/${company.id}`,company);
-      }
-      deleteCompany = (id:number) =>{
-        return this.http.delete<any>(`${this.basurl}/${id}`);
-      }
+  private basurl: string = 'http://localhost:4200/api/';
+  getCompany(): Observable<Company[]> {
+    return this.http.get<Company[]>(this.basurl + "company");
+  }
+  getCampanyById(id: number) {
+    return this.http.get(`${this.basurl}company/${id}`);
+  }
+  AddCompany(companyOb: Company) {
+    return this.http.post(`${this.basurl}company`, companyOb);
+  }
+  updateCompany(companyOb: Company) {
+    return this.http.put(`${this.basurl}company/${companyOb.id}`, companyOb);
+  }
+  deleteCompany(id: number) {
+    return this.http.delete<any>(`${this.basurl}company/${id}`);
+  }
 }
